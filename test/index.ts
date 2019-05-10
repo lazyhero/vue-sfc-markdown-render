@@ -43,7 +43,9 @@ test('Proper rendering of the table header', () => {
             },
         ],
     };
-    const render = new VueSFCMarkdownRender();
+    const render = new VueSFCMarkdownRender({
+        topTitleLevel: 2,
+    });
     const result: string = render.render(res.name || 'unkonw', res);
     // tslint:disable-next-line: no-console
     console.log(result);

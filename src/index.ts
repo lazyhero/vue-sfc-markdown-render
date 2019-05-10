@@ -73,7 +73,7 @@ class VueSFCMarkdownRender {
             if (parserResult[node]) {
                 const r = this.getRenderInstance({
                     name: node,
-                    titleLevel,
+                    titleLevel: titleLevel + 1,
                     descriptors: defaultNodeDescriptors[node],
                     descriptorLocals: this.options.descriptorLocals,
                     firstUpper: this.options.firstUpper,
