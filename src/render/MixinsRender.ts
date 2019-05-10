@@ -9,7 +9,7 @@ export default class MixinsRender extends BaseRender {
         parserResult.forEach((mixIn: any) => {
             const row = [];
             // @ts-ignore
-            for (const head of this.node.descriptors) {
+            for (const head of this.options.descriptors) {
                 if (head === 'MixIn') {
                     row.push(mixIn.mixIn);
                 } else {

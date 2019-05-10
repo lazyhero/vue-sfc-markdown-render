@@ -9,7 +9,7 @@ export default class ComputedRender extends BaseRender {
         parserResult.forEach((computed: any) => {
             const row = [];
             // @ts-ignore
-            for (const head of this.node.descriptors) {
+            for (const head of this.options.descriptors) {
                 if (head === 'Computed') {
                     row.push(computed.name);
                 } else if (head === 'Description') {

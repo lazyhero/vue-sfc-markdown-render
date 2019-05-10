@@ -9,7 +9,7 @@ export default class EventsRender extends BaseRender {
         parserResult.forEach((event: any) => {
             const row = [];
             // @ts-ignore
-            for (const head of this.node.descriptors) {
+            for (const head of this.options.descriptors) {
                 if (head === 'Event Name') {
                     row.push(event.name);
                 } else if (head === 'Description') {

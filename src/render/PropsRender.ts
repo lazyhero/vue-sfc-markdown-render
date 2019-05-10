@@ -9,7 +9,7 @@ export default class PropsRender extends BaseRender {
         parserResult.forEach((prop: any) => {
             const row = [];
             // @ts-ignore
-            for (const head of this.node.descriptors) {
+            for (const head of this.options.descriptors) {
                 if (head === 'Name') {
                     row.push(prop.name);
                 } else if (head === 'Description') {

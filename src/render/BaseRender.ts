@@ -1,22 +1,26 @@
-import { ParserResult } from '@vuese/parser';
+import upperFirst from 'lodash/upperFirst';
 
 export type RenderConstructor = new (...args: any[]) => BaseRender;
 
 export abstract class BaseRender {
-    node: any = {};
-    result: any = {
-        title: '',
-        header: '',
-        body: '',
+    options: any = {
+        name: '',
+        titleLevel: 1,
+        descriptors: [],
+        descriptorLocals: null,
+        firstUpper: true,
     };
-    constructor(node: any) {
-        this.node = node;
+    constructor(options: any) {
+        this.options = options;
     }
-    renderTitle(titleLevel: number) {
-        return `${''.padStart(titleLevel, '#')} ${this.node.name}\n`;
+    renderTitle() {
+        const name = this.options.firstUpper
+            ? upperFirst(this.options.name)
+            : this.options.name;
+        return `${''.padStart(this.options.titleLevel, '#')} ${name}\n`;
     }
-    renderDescriptors(descriptorLocals: any) {
-        const descriptors = this.localDescriptors(descriptorLocals);
+    renderDescriptors() {
+        const descriptors = this.localDescriptors();
         return `${this.renderTabelRow(descriptors)}${this.renderSplitLine(descriptors.length)}\n`;
     }
     renderTabelRow(row: string[]) {
@@ -29,10 +33,10 @@ export abstract class BaseRender {
         }
         return line + '|';
     }
-    abstract renderBody(parserResult: ParserResult): string;
-    private localDescriptors(descriptorLocals: any) {
-        return descriptorLocals
-        ? this.node.descriptors.map((descriptor: string) => descriptorLocals[descriptor])
-        : this.node.descriptors;
+    abstract renderBody(parserResult: any): string;
+    private localDescriptors() {
+        return this.options.descriptorLocals
+        ? this.options.descriptors.map((descriptor: string) => this.options.descriptorLocals[descriptor])
+        : this.options.descriptors;
     }
 }

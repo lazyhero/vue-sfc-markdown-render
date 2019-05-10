@@ -9,7 +9,7 @@ export default class SlotsRender extends BaseRender {
         parserResult.forEach((slot: any) => {
             const row = [];
             // @ts-ignore
-            for (const head of this.node.descriptors) {
+            for (const head of this.options.descriptors) {
                 if (head === 'Name') {
                     row.push(slot.name);
                 } else if (head === 'Description') {
