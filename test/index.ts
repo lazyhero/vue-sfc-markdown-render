@@ -1,8 +1,7 @@
-import Render from '../src/render';
-import { ParserResult } from '@vuese/parser';
+import {VueSFCMarkdownRender} from '../src';
 
 test('Proper rendering of the table header', () => {
-    const res: ParserResult = {
+    const res: any = {
         name: 'MyComponent',
         componentDesc: {
             default: ['This is a description of the component'],
@@ -44,7 +43,7 @@ test('Proper rendering of the table header', () => {
             },
         ],
     };
-    const render = new Render();
+    const render = new VueSFCMarkdownRender();
     const result: string = render.render(res.name || 'unkonw', res);
     // tslint:disable-next-line: no-console
     console.log(result);
