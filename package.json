@@ -1,6 +1,6 @@
 {
   "name": "vue-sfc-markdown-render",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "lib/index.js",
   "repository": "git@github.com:lazyhero/vue-sfc-markdown-render.git",
   "license": "MIT",
