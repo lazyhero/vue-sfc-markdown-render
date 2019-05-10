@@ -28,6 +28,7 @@ interface VueSFCMarkdownRenderOption {
     nodes?: string[] | VueSFCNode[];
     topTitleLevel?: number;
     descriptorLocals?: null | { [key: string]: string };
+    firstUpper?: boolean;
 }
 
 const defaultNodeDescriptors: { [key: string]: string[] } = {
@@ -44,6 +45,7 @@ class VueSFCMarkdownRender {
         nodes: ['props', 'events', 'slots', 'computed', 'mixIns', 'methods'],
         topTitleLevel: 1,
         descriptorLocals: null,
+        firstUpper: true,
     };
     renderMap: { [key: string]: any } = {
         ComputedRender,
@@ -71,10 +73,13 @@ class VueSFCMarkdownRender {
             if (parserResult[node]) {
                 const r = this.getRenderInstance({
                     name: node,
+                    titleLevel,
                     descriptors: defaultNodeDescriptors[node],
+                    descriptorLocals: this.options.descriptorLocals,
+                    firstUpper: this.options.firstUpper,
                 });
-                content += r.renderTitle(titleLevel + 1);
-                content += r.renderDescriptors(this.options.descriptorLocals);
+                content += r.renderTitle();
+                content += r.renderDescriptors();
                 content += r.renderBody(parserResult[node]);
             }
             return content;

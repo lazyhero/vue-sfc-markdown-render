@@ -1,4 +1,4 @@
-# VUE-SFC-MARKDOWN_RENDER
+# VUE-SFC-MARKDOWN-RENDER
 
 ## 1.目标
 将单文件vue组件使用markdown描述，当然目前只做到基础的结构描述

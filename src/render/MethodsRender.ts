@@ -9,7 +9,7 @@ export default class MethodsRender extends BaseRender {
         parserResult.forEach((method: any) => {
             const row = [];
             // @ts-ignore
-            for (const head of this.node.descriptors) {
+            for (const head of this.options.descriptors) {
                 if (head === 'Method') {
                     row.push(method.name);
                 } else if (head === 'Description') {
