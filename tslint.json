@@ -1,0 +1,85 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-eslint-rules"
+  ],
+  "rules": {
+    "prefer-template": [
+      true,
+      "allow-single-concat"
+    ],
+    "import-name": [
+      false
+    ],
+    "interface-name": [
+      true,
+      "never-prefix"
+    ],
+    "max-line-length": [
+      true,
+      150
+    ],
+    "member-ordering": [
+      false
+    ],
+    "no-implicit-dependencies": [
+      false,
+      "dev"
+    ],
+    "no-shadowed-variable": [
+      false
+    ],
+    "no-unused-expression": [
+      true,
+      "allow-fast-null-checks"
+    ],
+    "object-literal-sort-keys": [
+      false
+    ],
+    "object-shorthand-properties-first": [
+      false
+    ],
+    "one-line": [
+      false
+    ],
+    "ordered-imports": [
+      false
+    ],
+    "prefer-array-literal": [
+      false
+    ],
+    "strict-boolean-expressions": [
+      false
+    ],
+    "ter-indent": [
+      true,
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "noImplicitAny": false,
+    "trailing-comma": [true,{
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+    "no-var-requires": false,
+    "quotemark": false,
+    "no-increment-decrement": false,
+    "no-submodule-imports": false,
+    "member-access": false,
+    "align": false,
+    "max-classes-per-file": false,
+    // tslint-eslint-rules
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore"
+    ]
+  },
+  "jsRules": {
+    "object-literal-sort-keys": false
+  }
+}
