@@ -355,6 +355,11 @@
   dependencies:
     "@types/jest-diff" "*"
 
+"@types/lodash@^4.14.125":
+  version "4.14.125"
+  resolved "https://npm.corp.kuaishou.com/@types%2flodash/-/lodash-4.14.125.tgz#b5fa71f3080a2136ba2702c390ffe528ec1e3980"
+  integrity sha1-tfpx8wgKITa6JwLDkP/lKOweOYA=
+
 "@types/node@^11.13.9":
   version "11.13.10"
   resolved "https://npm.corp.kuaishou.com/@types%2fnode/-/node-11.13.10.tgz#4df59e5966b56f512bac98898bcbee5067411f0f"
