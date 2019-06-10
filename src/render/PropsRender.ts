@@ -50,7 +50,12 @@ export default class PropsRender extends BaseRender {
                     if (prop.defaultDesc) {
                         row.push(prop.defaultDesc.join(''));
                     } else if (prop.default) {
-                        row.push(prop.default.replace(/\n/g, ''));
+                        // TODO 迁移到自己的parser就好了
+                        if (typeof prop.default === 'string') {
+                            row.push(prop.default.replace(/\n/g, ''));
+                        } else {
+                            row.push(prop.default);
+                        }
                     } else {
                         row.push('-');
                     }
